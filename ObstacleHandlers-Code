@@ -1,0 +1,25 @@
+using System.Numerics;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ObstacleHandler : MonoBehaviour
+{
+    [SerializeField] GameObject obstaclePrefab;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        for(int i= 0; i < Random.Range(5, 15); i++)
+        {
+            GameObject temp = Instantiate(obstaclePrefab,new UnityEngine.Vector3(Random.Range(-18,18),4,Random.Range(transform.position.z-30,transform.position.z+30)),UnityEngine.Quaternion.identity);
+            temp.transform.parent = gameObject.transform; 
+        }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}
